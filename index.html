@@ -21,12 +21,15 @@
         <div class="col-md-12">
             <button class="btn btn-primary" ng-click="main.setCurrentTime()">Set Current Time</button>
             <button class="btn btn-primary" ng-click="main.clearTime()">Clear Time</button>
+            <button class="btn btn-primary" ng-click="main.toggleMode()">{{ main.timeMode === 24 ? 'Set to 12h mode':
+                'Set to 24h mode'}}
+            </button>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <h4>Angular Input Time Directive</h4>
-            <png-time-input model="main.time"></png-time-input>
+            <png-time-input model="main.time" time-mode="main.timeMode"></png-time-input>
         </div>
         <div class="col-md-6">
             <h4>Chrome Implementation</h4>
