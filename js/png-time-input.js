@@ -134,15 +134,14 @@
       }
 
       function modeInputParser(value) {
-        if (value.toLowerCase().indexOf('a') >= 0) {
+        //if user has typed 'a', or has typed 'm' with 'AM' showing
+        if ((value.toLowerCase().indexOf('a') >= 0) || (value.toLowerCase() === 'm' && modeInputCtrl.$modelValue === 'AM')) {
           modeInputCtrl.$viewValue = 'AM';
-          modeInputCtrl.$commitViewValue();
-          modeInputCtrl.$render();
         } else {
           modeInputCtrl.$viewValue = 'PM';
-          modeInputCtrl.$commitViewValue();
-          modeInputCtrl.$render();
         }
+        modeInputCtrl.$commitViewValue();
+        modeInputCtrl.$render();
 
         modeInput.select();
 
